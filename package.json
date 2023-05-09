@@ -4,6 +4,7 @@
   "homepage": "https://anthony-j-castro.github.io/demo-extension-receiver",
   "private": true,
   "dependencies": {
+    "@tanstack/router": "0.0.1-beta.89",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "13.5.0",
