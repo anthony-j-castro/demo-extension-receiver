@@ -31,6 +31,10 @@ const routeTree = rootRoute.addChildren([indexRoute, recipeRoute]);
 const history = createBrowserHistory();
 
 // Create the router using your route tree
-const router = new Router({ history, routeTree });
+const router = new Router({
+  basepath: "/demo-extension-receiver",
+  history,
+  routeTree,
+});
 
 export default router;
