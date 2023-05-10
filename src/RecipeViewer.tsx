@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "@tanstack/router";
 
 export default function RecipeViewer() {
   useEffect(() => {
@@ -19,5 +20,10 @@ export default function RecipeViewer() {
     };
   }, []);
 
-  return <h1>Recipe</h1>;
+  return (
+    <div>
+      <h1>Recipe</h1>
+      <Link to="/">Home</Link>
+    </div>
+  );
 }
