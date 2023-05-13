@@ -15,6 +15,8 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #202124;
 `;
 
 export const Heading = styled.h1`
