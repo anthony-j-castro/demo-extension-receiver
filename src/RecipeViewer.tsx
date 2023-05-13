@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "@tanstack/router";
 
 export default function RecipeViewer() {
+  const [recipe, setRecipe] = useState(undefined);
+
   useEffect(() => {
     const listener = (event: MessageEvent) => {
       // We only accept messages from ourselves
@@ -10,6 +12,10 @@ export default function RecipeViewer() {
       }
 
       console.log("received message:", event.data);
+
+      if (event.type === "RECIPE_JSON") {
+        setRecipe(event.data);
+      }
     };
 
     window.addEventListener("message", listener, false);
@@ -24,6 +30,11 @@ export default function RecipeViewer() {
     <div>
       <h1>Recipe</h1>
       <Link to="/">Home</Link>
+      {recipe ? (
+        <textarea value={JSON.stringify(recipe)} readOnly />
+      ) : (
+        <div>Waiting for recipe…</div>
+      )}
     </div>
   );
 }
