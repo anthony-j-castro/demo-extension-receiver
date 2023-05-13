@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { LoadingMessage, RecipeData } from "./styled";
+import recipeMessageDecoder from "../../decoders/recipeMessage";
 
 export default function RecipeViewer() {
-  const [recipe, setRecipe] = useState(undefined);
+  const [recipe, setRecipe] = useState<Record<string, unknown> | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     const listener = (event: MessageEvent) => {
@@ -11,17 +14,16 @@ export default function RecipeViewer() {
         return;
       }
 
-      console.log("received message:", event.data);
+      const message = recipeMessageDecoder.value(event.data);
 
-      if (event.data.type === "RECIPE_JSON") {
-        setRecipe(event.data.data);
+      if (message !== undefined) {
+        setRecipe(message.data);
       }
     };
 
     window.addEventListener("message", listener, false);
 
     return () => {
-      console.log("removing event listener");
       window.removeEventListener("message", listener);
     };
   }, []);

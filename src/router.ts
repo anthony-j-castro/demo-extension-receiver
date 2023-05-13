@@ -4,9 +4,9 @@ import {
   RootRoute,
   createBrowserHistory,
 } from "@tanstack/router";
-import Home from "./Home";
-import App from "./App";
-import RecipeViewer from "./RecipeViewer";
+import Home from "./components/Home";
+import App from "./components/App";
+import RecipeViewer from "./components/RecipeViewer";
 
 // Create a root route
 const rootRoute = new RootRoute({
