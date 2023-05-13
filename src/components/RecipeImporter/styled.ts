@@ -17,7 +17,7 @@ export const RecipeData = styled.textarea`
   height: 100%;
   resize: none;
   padding: 8px;
-  border: 1px solid black;
+  border: 2px solid #f6deab;
   border-radius: 4px;
   box-sizing: border-box;
   background-color: rgba(246, 222, 171, 0.3);
