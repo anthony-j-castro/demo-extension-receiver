@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "@tanstack/router";
+import { LoadingMessage, RecipeData } from "./styled";
 
 export default function RecipeViewer() {
   const [recipe, setRecipe] = useState(undefined);
@@ -26,15 +26,9 @@ export default function RecipeViewer() {
     };
   }, []);
 
-  return (
-    <div>
-      <h1>Recipe</h1>
-      <Link to="/">Home</Link>
-      {recipe ? (
-        <textarea value={JSON.stringify(recipe)} readOnly />
-      ) : (
-        <div>Waiting for recipe…</div>
-      )}
-    </div>
+  return recipe ? (
+    <RecipeData value={JSON.stringify(recipe)} readOnly />
+  ) : (
+    <LoadingMessage>Waiting to receive recipe data…</LoadingMessage>
   );
 }

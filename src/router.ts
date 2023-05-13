@@ -4,19 +4,19 @@ import {
   RootRoute,
   createBrowserHistory,
 } from "@tanstack/router";
+import Home from "./Home";
 import App from "./App";
-import Root from "./Root";
 import RecipeViewer from "./RecipeViewer";
 
 // Create a root route
 const rootRoute = new RootRoute({
-  component: Root,
+  component: App,
 });
 
 const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: App,
+  component: Home,
 });
 
 const recipeRoute = new Route({
