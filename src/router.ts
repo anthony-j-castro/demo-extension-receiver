@@ -6,7 +6,7 @@ import {
 } from "@tanstack/router";
 import Home from "./components/Home";
 import App from "./components/App";
-import RecipeViewer from "./components/RecipeViewer";
+import RecipeImporter from "./components/RecipeImporter";
 
 // Create a root route
 const rootRoute = new RootRoute({
@@ -22,7 +22,7 @@ const indexRoute = new Route({
 const recipeRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/recipe",
-  component: RecipeViewer,
+  component: RecipeImporter,
 });
 
 // Create the route tree using your routes

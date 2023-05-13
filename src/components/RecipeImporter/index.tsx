@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LoadingMessage, RecipeData } from "./styled";
 import recipeMessageDecoder from "../../decoders/recipeMessage";
 
-export default function RecipeViewer() {
+export default function RecipeImporter() {
   const [recipe, setRecipe] = useState<Record<string, unknown> | undefined>(
     undefined
   );
@@ -29,7 +29,7 @@ export default function RecipeViewer() {
   }, []);
 
   return recipe ? (
-    <RecipeData value={JSON.stringify(recipe)} readOnly />
+    <RecipeData value={JSON.stringify(recipe, null, 2)} readOnly />
   ) : (
     <LoadingMessage>Waiting to receive recipe data…</LoadingMessage>
   );

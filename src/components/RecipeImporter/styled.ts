@@ -7,7 +7,7 @@ export const LoadingMessage = styled.div`
   align-items: center;
   justify-content: center;
   padding: 8px;
-  border: 1px solid black;
+  border: 2px solid #f6deab;
   border-radius: 4px;
   box-sizing: border-box;
 `;
@@ -20,5 +20,5 @@ export const RecipeData = styled.textarea`
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(246, 222, 171, 0.3);
 `;

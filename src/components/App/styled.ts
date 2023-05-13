@@ -22,6 +22,10 @@ export const Heading = styled.h1`
   margin: 0;
 `;
 
+export const Nav = styled.nav`
+  flex-shrink: 0;
+`;
+
 export const List = styled.ul`
   list-style-type: none;
   display: flex;

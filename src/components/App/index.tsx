@@ -1,22 +1,30 @@
 import React from "react";
 import { Link, Outlet } from "@tanstack/router";
-import { InnerBody, Header, Heading, List, ListItem, Content } from "./styled";
+import {
+  InnerBody,
+  Header,
+  Heading,
+  Nav,
+  List,
+  ListItem,
+  Content,
+} from "./styled";
 
 export default function App() {
   return (
     <InnerBody>
       <Header>
         <Heading>Demo Extension Receiver</Heading>
-        <nav>
+        <Nav>
           <List>
             <ListItem>
               <Link to="/">Home</Link>
             </ListItem>
             <ListItem>
-              <Link to="/recipe">Recipe Viewer</Link>
+              <Link to="/recipe">Recipe Importer</Link>
             </ListItem>
           </List>
-        </nav>
+        </Nav>
       </Header>
       <Content>
         <Outlet />
