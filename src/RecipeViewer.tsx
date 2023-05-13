@@ -13,8 +13,8 @@ export default function RecipeViewer() {
 
       console.log("received message:", event.data);
 
-      if (event.type === "RECIPE_JSON") {
-        setRecipe(event.data);
+      if (event.data.type === "RECIPE_JSON") {
+        setRecipe(event.data.data);
       }
     };
 
